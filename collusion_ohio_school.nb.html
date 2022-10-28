@@ -1770,62 +1770,12 @@ pre code {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm0obGlzdCA9IGxzKCkpXG5saWJyYXJ5KHRpZHl2ZXJzZSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm0obGlzdCA9IGxzKCkpXG5saWJyYXJ5KHRpZHl2ZXJzZSlcbmxpYnJhcnkobHVicmlkYXRlKVxubGlicmFyeShwYXJ0eSlcbmBgYCJ9 -->
 <pre class="r"><code>rm(list = ls())
-library(tidyverse)</code></pre>
+library(tidyverse)
+library(lubridate)
+library(party)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxuIn0= -->
-<pre><code>Registered S3 methods overwritten by &#39;dbplyr&#39;:
-  method         from
-  print.tbl_lazy     
-  print.tbl_sql      </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoi4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDEuMy4yIOKUgOKUgFxu4pyUIGdncGxvdDIgMy4zLjYgICAgIOKclCBwdXJyciAgIDAuMy40XG7inJQgdGliYmxlICAzLjEuOCAgICAg4pyUIGRwbHlyICAgMS4wLjlcbuKclCB0aWR5ciAgIDEuMi4wICAgICDinJQgc3RyaW5nciAxLjQuMVxu4pyUIHJlYWRyICAgMi4xLjIgICAgIOKclCBmb3JjYXRzIDAuNS4yXG7ilIDilIAgQ29uZmxpY3RzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCB0aWR5dmVyc2VfY29uZmxpY3RzKCkg4pSA4pSAXG7inJYgZHBseXI6OmZpbHRlcigpIG1hc2tzIHN0YXRzOjpmaWx0ZXIoKVxu4pyWIGRwbHlyOjpsYWcoKSAgICBtYXNrcyBzdGF0czo6bGFnKClcbiJ9 -->
-<pre><code>── Attaching packages ─────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.2 ──
-✔ ggplot2 3.3.6     ✔ purrr   0.3.4
-✔ tibble  3.1.8     ✔ dplyr   1.0.9
-✔ tidyr   1.2.0     ✔ stringr 1.4.1
-✔ readr   2.1.2     ✔ forcats 0.5.2
-── Conflicts ────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShsdWJyaWRhdGUpXG5gYGAifQ== -->
-<pre class="r"><code>library(lubridate)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYbHVicmlkYXRl4oCZXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g4oCYcGFja2FnZTpiYXNl4oCZOlxuXG4gICAgZGF0ZSwgaW50ZXJzZWN0LCBzZXRkaWZmLCB1bmlvblxuIn0= -->
-<pre><code>
-Attaching package: ‘lubridate’
-
-The following objects are masked from ‘package:base’:
-
-    date, intersect, setdiff, union</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwYXJ0eSlcbmBgYCJ9 -->
-<pre class="r"><code>library(party)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBncmlkXG5Mb2FkaW5nIHJlcXVpcmVkIHBhY2thZ2U6IG12dG5vcm1cbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogbW9kZWx0b29sc1xuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBzdGF0czRcbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogc3RydWNjaGFuZ2VcbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogem9vXG5cbkF0dGFjaGluZyBwYWNrYWdlOiDigJh6b2/igJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOmJhc2XigJk6XG5cbiAgICBhcy5EYXRlLCBhcy5EYXRlLm51bWVyaWNcblxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBzYW5kd2ljaFxuXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYc3RydWNjaGFuZ2XigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTpzdHJpbmdy4oCZOlxuXG4gICAgYm91bmRhcnlcbiJ9 -->
-<pre><code>Loading required package: grid
-Loading required package: mvtnorm
-Loading required package: modeltools
-Loading required package: stats4
-Loading required package: strucchange
-Loading required package: zoo
-
-Attaching package: ‘zoo’
-
-The following objects are masked from ‘package:base’:
-
-    as.Date, as.Date.numeric
-
-Loading required package: sandwich
-
-Attaching package: ‘strucchange’
-
-The following object is masked from ‘package:stringr’:
-
-    boundary</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -1874,24 +1824,105 @@ dbl (9): ...1, year, bid, winning_bid, inflation_adjusted_bid, inflation_raw_mil
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<div id="add-district-information-to-milkdata" class="section level1">
-<h1>Add district information to MilkData</h1>
+<div id="clean-data-from-district.prn" class="section level2">
+<h2>Clean data from District.PRN</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBGaW5kIGluZGl2aWR1YWwgZGlzdHJpY3QgSURzIGluIHJvd3MgWDQtWDdcbkRpc3RyaWN0IDwtXG4gIERpc3RyaWN0ICU+JVxuICBtdXRhdGUoRDQgPSBzdHJfZXh0cmFjdChzdHJpbmcgPSBYNCwgcGF0dGVybiA9IFwiXjB7MX1cXFxcZHs1fVwiKSkgJT4lXG4gIG11dGF0ZShENSA9IHN0cl9leHRyYWN0KHN0cmluZyA9IFg1LCBwYXR0ZXJuID0gXCJeMHsxfVxcXFxkezV9XCIpKSAlPiVcbiAgbXV0YXRlKEQ2ID0gc3RyX2V4dHJhY3Qoc3RyaW5nID0gWDYsIHBhdHRlcm4gPSBcIl4wezF9XFxcXGR7NX1cIikpICU+JVxuICBtdXRhdGUoRDcgPSBzdHJfZXh0cmFjdChzdHJpbmcgPSBYNywgcGF0dGVybiA9IFwiXjB7MX1cXFxcZHs1fVwiKSlcblxuXG5gYGAifQ== -->
-<pre class="r"><code># Find individual district IDs in rows X4-X7
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBGaW5kIGluZGl2aWR1YWwgZGlzdHJpY3QgSURzIGluIHJvd3MgWDQtWDcgYW5kIGNvbWJpbmUgdGhlbSBpbnRvIGEgc2luZ2xlIGRpc3RyaWN0IGlkXG5EaXN0cmljdCA8LVxuICBEaXN0cmljdCAlPiVcbiAgbXV0YXRlKEQ0ID0gc3RyX2V4dHJhY3Qoc3RyaW5nID0gWDQsIHBhdHRlcm4gPSBcIl4wezF9XFxcXGR7NX1cIiksXG4gICAgICAgICBENSA9IHN0cl9leHRyYWN0KHN0cmluZyA9IFg1LCBwYXR0ZXJuID0gXCJeMHsxfVxcXFxkezV9XCIpLFxuICAgICAgICAgRDYgPSBzdHJfZXh0cmFjdChzdHJpbmcgPSBYNiwgcGF0dGVybiA9IFwiXjB7MX1cXFxcZHs1fVwiKSxcbiAgICAgICAgIEQ3ID0gc3RyX2V4dHJhY3Qoc3RyaW5nID0gWDcsIHBhdHRlcm4gPSBcIl4wezF9XFxcXGR7NX1cIiksXG4gICAgICAgICBkaXN0cmljdF9pZCA9IGNvYWxlc2NlKEQ0LCBENSwgRDYsIEQ3KSkgJT4lXG4gIHNlbGVjdCghYyhENCxENSxENixENykpXG5cbiMgQ3JlYXRlIGEgc2luZ2xlIHZhcmlhYmxlIGZvciBjaXR5XG5EaXN0cmljdCA8LVxuICBEaXN0cmljdCAlPiVcbiAgdW5pdGUoY2l0eSwgYyhYMiwgWDMpLCBzZXAgPSBcIiBcIiwgcmVtb3ZlID0gVFJVRSlcblxuXG5cbmBgYCJ9 -->
+<pre class="r"><code># Find individual district IDs in rows X4-X7 and combine them into a single district id
 District &lt;-
   District %&gt;%
-  mutate(D4 = str_extract(string = X4, pattern = &quot;^0{1}\\d{5}&quot;)) %&gt;%
-  mutate(D5 = str_extract(string = X5, pattern = &quot;^0{1}\\d{5}&quot;)) %&gt;%
-  mutate(D6 = str_extract(string = X6, pattern = &quot;^0{1}\\d{5}&quot;)) %&gt;%
-  mutate(D7 = str_extract(string = X7, pattern = &quot;^0{1}\\d{5}&quot;))
+  mutate(D4 = str_extract(string = X4, pattern = &quot;^0{1}\\d{5}&quot;),
+         D5 = str_extract(string = X5, pattern = &quot;^0{1}\\d{5}&quot;),
+         D6 = str_extract(string = X6, pattern = &quot;^0{1}\\d{5}&quot;),
+         D7 = str_extract(string = X7, pattern = &quot;^0{1}\\d{5}&quot;),
+         district_id = coalesce(D4, D5, D6, D7)) %&gt;%
+  select(!c(D4,D5,D6,D7))
+
+# Create a single variable for city
+District &lt;-
+  District %&gt;%
+  unite(city, c(X2, X3), sep = &quot; &quot;, remove = TRUE)
 </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="add-city-name-to-ohio_milk-data" class="section level2">
+<h2>Add city name to ohio_milk data</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBJc29sYXRlIGRpc3RyaWN0IElEIGluIE1pbGtEYXRhXG5NaWxrRGF0YSA8LSBcbiAgTWlsa0RhdGEgJT4lXG4gIHNlcGFyYXRlKGNvbnRyYWN0X2lkLCBjKFwieWVhclwiLCBcImRpc3RyaWN0X2lkXCIpLCByZW1vdmUgPSBGQUxTRSkgIyBrZWVwaW5nIG9yaWdpbmFsIHRvIGJpZCBJRCBwdXJwb3Nlc1xuXG4jIEpvaW4gRGlzdHJpY3QgYW5kIE1pbGtEYXRhIHNvIHRoYXQgY2l0eSBuYW1lcyBhcmUgYXNzb2NpYXRlZCB3aXRoIGRpc3RyaWN0IElEc1xuTWlsa0RhdGEgPC0gXG4gIE1pbGtEYXRhICU+JVxuICBsZWZ0X2pvaW4oRGlzdHJpY3QgJT4lIHNlbGVjdChkaXN0cmljdF9pZCwgY2l0eSksIGJ5ID0gXCJkaXN0cmljdF9pZFwiKVxuXG4jIENsZWFuIHVwIE1pbGtEYXRhXG5NaWxrRGF0YSA8LSBcbiAgTWlsa0RhdGEgJT4lXG4gIHNlbGVjdCghYyguLi4xLCBpbmZsYXRpb25fYWRqdXN0ZWRfYmlkLCBpbmZsYXRpb25fcmF3X21pbGtfcHJpY2VfYWRqdXN0ZWRfYmlkKSkgJT4lXG4gIHNlbGVjdChjb250cmFjdF9pZCwgeWVhciwgY2l0eSwgZGlzdHJpY3RfaWQsIGJpZCwgZmlybSwgd2lubmluZ19iaWQsIGlzX2NhcnRlbF9maXJtLCBvbmx5X2NhcnRlbHNfYmlkZGluZ19vbl9jb250cmFjdCwgbnVtYmVyX29mX2JpZGRlcnNfb25fY29udHJhY3QpICU+JVxuICBtdXRhdGUoZGlzdHJpY3RfaWQgPSBhcy5udW1lcmljKGRpc3RyaWN0X2lkKSlcbmBgYCJ9 -->
+<pre class="r"><code># Isolate district ID in MilkData
+MilkData &lt;- 
+  MilkData %&gt;%
+  separate(contract_id, c(&quot;year&quot;, &quot;district_id&quot;), remove = FALSE) # keeping original to bid ID purposes
+
+# Join District and MilkData so that city names are associated with district IDs
+MilkData &lt;- 
+  MilkData %&gt;%
+  left_join(District %&gt;% select(district_id, city), by = &quot;district_id&quot;)
+
+# Clean up MilkData
+MilkData &lt;- 
+  MilkData %&gt;%
+  select(!c(...1, inflation_adjusted_bid, inflation_raw_milk_price_adjusted_bid)) %&gt;%
+  select(contract_id, year, city, district_id, bid, firm, winning_bid, is_cartel_firm, only_cartels_bidding_on_contract, number_of_bidders_on_contract) %&gt;%
+  mutate(district_id = as.numeric(district_id))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="summary-statistics" class="section level2">
+<h2>Summary Statistics</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShNaWxrRGF0YSlcbmBgYCJ9 -->
+<pre class="r"><code>summary(MilkData)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIGNvbnRyYWN0X2lkICAgICAgICAgICAgeWVhciAgICAgICAgICAgICAgIGNpdHkgICAgICAgICAgICBkaXN0cmljdF9pZCAgICAgICAgICBiaWQgICAgICAgICAgICAgZmlybSAgICAgICAgICAgIHdpbm5pbmdfYmlkICAgXG4gTGVuZ3RoOjcwMDQgICAgICAgIExlbmd0aDo3MDA0ICAgICAgICBMZW5ndGg6NzAwNCAgICAgICAgTWluLiAgIDogNDM0ODkgICBNaW4uICAgOjAuMDk2OSAgIExlbmd0aDo3MDA0ICAgICAgICBNaW4uICAgOjAuMDAwICBcbiBDbGFzcyA6Y2hhcmFjdGVyICAgQ2xhc3MgOmNoYXJhY3RlciAgIENsYXNzIDpjaGFyYWN0ZXIgICAxc3QgUXUuOiA0NDk5MCAgIDFzdCBRdS46MC4xMjQ5ICAgQ2xhc3MgOmNoYXJhY3RlciAgIDFzdCBRdS46MC4wMDAgIFxuIE1vZGUgIDpjaGFyYWN0ZXIgICBNb2RlICA6Y2hhcmFjdGVyICAgTW9kZSAgOmNoYXJhY3RlciAgIE1lZGlhbiA6IDQ2OTUzICAgTWVkaWFuIDowLjEzMTkgICBNb2RlICA6Y2hhcmFjdGVyICAgTWVkaWFuIDoxLjAwMCAgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTWVhbiAgIDogNTkwMDUgICBNZWFuICAgOjAuMTMzNCAgICAgICAgICAgICAgICAgICAgICBNZWFuICAgOjAuNTM2ICBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAzcmQgUXUuOiA0OTQ5NCAgIDNyZCBRdS46MC4xNDEwICAgICAgICAgICAgICAgICAgICAgIDNyZCBRdS46MS4wMDAgIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIE1heC4gICA6OTk5OTk1ICAgTWF4LiAgIDowLjIxMzAgICAgICAgICAgICAgICAgICAgICAgTWF4LiAgIDoxLjAwMCAgXG4gaXNfY2FydGVsX2Zpcm0gICBvbmx5X2NhcnRlbHNfYmlkZGluZ19vbl9jb250cmFjdCBudW1iZXJfb2ZfYmlkZGVyc19vbl9jb250cmFjdFxuIE1pbi4gICA6MC4wMDAwICAgTWluLiAgIDowLjAwMDAwICAgICAgICAgICAgICAgICAgTWluLiAgIDoxLjAwMCAgICAgICAgICAgICAgICBcbiAxc3QgUXUuOjAuMDAwMCAgIDFzdCBRdS46MC4wMDAwMCAgICAgICAgICAgICAgICAgIDFzdCBRdS46Mi4wMDAgICAgICAgICAgICAgICAgXG4gTWVkaWFuIDowLjAwMDAgICBNZWRpYW4gOjAuMDAwMDAgICAgICAgICAgICAgICAgICBNZWRpYW4gOjIuMDAwICAgICAgICAgICAgICAgIFxuIE1lYW4gICA6MC4xMjM2ICAgTWVhbiAgIDowLjA2NjUzICAgICAgICAgICAgICAgICAgTWVhbiAgIDoyLjMzOSAgICAgICAgICAgICAgICBcbiAzcmQgUXUuOjAuMDAwMCAgIDNyZCBRdS46MC4wMDAwMCAgICAgICAgICAgICAgICAgIDNyZCBRdS46My4wMDAgICAgICAgICAgICAgICAgXG4gTWF4LiAgIDoxLjAwMDAgICBNYXguICAgOjEuMDAwMDAgICAgICAgICAgICAgICAgICBNYXguICAgOjYuMDAwICAgICAgICAgICAgICAgIFxuIn0= -->
+<pre><code> contract_id            year               city            district_id          bid             firm            winning_bid   
+ Length:7004        Length:7004        Length:7004        Min.   : 43489   Min.   :0.0969   Length:7004        Min.   :0.000  
+ Class :character   Class :character   Class :character   1st Qu.: 44990   1st Qu.:0.1249   Class :character   1st Qu.:0.000  
+ Mode  :character   Mode  :character   Mode  :character   Median : 46953   Median :0.1319   Mode  :character   Median :1.000  
+                                                          Mean   : 59005   Mean   :0.1334                      Mean   :0.536  
+                                                          3rd Qu.: 49494   3rd Qu.:0.1410                      3rd Qu.:1.000  
+                                                          Max.   :999995   Max.   :0.2130                      Max.   :1.000  
+ is_cartel_firm   only_cartels_bidding_on_contract number_of_bidders_on_contract
+ Min.   :0.0000   Min.   :0.00000                  Min.   :1.000                
+ 1st Qu.:0.0000   1st Qu.:0.00000                  1st Qu.:2.000                
+ Median :0.0000   Median :0.00000                  Median :2.000                
+ Mean   :0.1236   Mean   :0.06653                  Mean   :2.339                
+ 3rd Qu.:0.0000   3rd Qu.:0.00000                  3rd Qu.:3.000                
+ Max.   :1.0000   Max.   :1.00000                  Max.   :6.000                </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMgTnVtYmVyIG9mIGRpc3RyaWN0c1xuTWlsa0RhdGEgJT4lXG4gIGNvdW50KGRpc3RyaWN0X2lkKVxuXG4jIyBOdW1iZXIgb2YgdGltZXMgYmlkcyBmb3IgYSBnaXZlbiB5ZWFyIHdlcmUgYXQgbGVhc3QgNSA1XG5NaWxrRGF0YSAlPiVcbiAgZ3JvdXBfYnkoeWVhciwgZGlzdHJpY3RfaWQpICU+JVxuICBzdW1tYXJpemUodG90YWxfYmlkcyA9IG4oKSkgJT4lXG4gIGFycmFuZ2UoZGVzYyh0b3RhbF9iaWRzKSkgJT4lXG4gIGZpbHRlcih0b3RhbF9iaWRzID49IDUpXG5cblxuYGBgIn0= -->
+<pre class="r"><code>## Number of districts
+MilkData %&gt;%
+  count(district_id)
+
+## Number of times bids for a given year were at least 5 5
+MilkData %&gt;%
+  group_by(year, district_id) %&gt;%
+  summarize(total_bids = n()) %&gt;%
+  arrange(desc(total_bids)) %&gt;%
+  filter(total_bids &gt;= 5)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>There are only 25 occasions where there were at least 25 bids on a
+single contract for a given year.</li>
+</ul>
+<!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiQ29sbHVzaW9uIFByb2plY3QiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCi0tLQp0aXRsZTogIk9oaW8gU2Nob29sIE1pbGsgQ29sbHVzaW9uIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgpgYGB7cn0Kcm0obGlzdCA9IGxzKCkpCmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGx1YnJpZGF0ZSkKbGlicmFyeShwYXJ0eSkKYGBgCgpgYGB7cn0KRGlzdHJpY3QgPC0gcmVhZHI6OnJlYWRfdGFibGUoIkRJU1RSSUNULlBSTiIsIGNvbF9uYW1lcyA9IEZBTFNFLCBuYSA9ICJOQSIpICMgZmlsZSBkb2VzIG5vdCBoYXZlIGhlYWRlcnMKTWlsa0RhdGEgPC0gcmVhZF9jc3YoIm9oaW9fbWlsa19kYXRhLmNzdiIpCmBgYAoKIyBBZGQgZGlzdHJpY3QgaW5mb3JtYXRpb24gdG8gTWlsa0RhdGEKYGBge3J9CiMgRmluZCBpbmRpdmlkdWFsIGRpc3RyaWN0IElEcyBpbiByb3dzIFg0LVg3CkRpc3RyaWN0IDwtCiAgRGlzdHJpY3QgJT4lCiAgbXV0YXRlKEQ0ID0gc3RyX2V4dHJhY3Qoc3RyaW5nID0gWDQsIHBhdHRlcm4gPSAiXjB7MX1cXGR7NX0iKSkgJT4lCiAgbXV0YXRlKEQ1ID0gc3RyX2V4dHJhY3Qoc3RyaW5nID0gWDUsIHBhdHRlcm4gPSAiXjB7MX1cXGR7NX0iKSkgJT4lCiAgbXV0YXRlKEQ2ID0gc3RyX2V4dHJhY3Qoc3RyaW5nID0gWDYsIHBhdHRlcm4gPSAiXjB7MX1cXGR7NX0iKSkgJT4lCiAgbXV0YXRlKEQ3ID0gc3RyX2V4dHJhY3Qoc3RyaW5nID0gWDcsIHBhdHRlcm4gPSAiXjB7MX1cXGR7NX0iKSkKCgpgYGA=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQ29sbHVzaW9uIFByb2plY3QiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCi0tLQp0aXRsZTogIk9oaW8gU2Nob29sIE1pbGsgQ29sbHVzaW9uIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgpgYGB7cn0Kcm0obGlzdCA9IGxzKCkpCmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGx1YnJpZGF0ZSkKbGlicmFyeShwYXJ0eSkKYGBgCgpgYGB7cn0KRGlzdHJpY3QgPC0gcmVhZHI6OnJlYWRfdGFibGUoIkRJU1RSSUNULlBSTiIsIGNvbF9uYW1lcyA9IEZBTFNFLCBuYSA9ICJOQSIpICMgZmlsZSBkb2VzIG5vdCBoYXZlIGhlYWRlcnMKTWlsa0RhdGEgPC0gcmVhZF9jc3YoIm9oaW9fbWlsa19kYXRhLmNzdiIpCmBgYAoKIyMgQ2xlYW4gZGF0YSBmcm9tIERpc3RyaWN0LlBSTgpgYGB7cn0KIyBGaW5kIGluZGl2aWR1YWwgZGlzdHJpY3QgSURzIGluIHJvd3MgWDQtWDcgYW5kIGNvbWJpbmUgdGhlbSBpbnRvIGEgc2luZ2xlIGRpc3RyaWN0IGlkCkRpc3RyaWN0IDwtCiAgRGlzdHJpY3QgJT4lCiAgbXV0YXRlKEQ0ID0gc3RyX2V4dHJhY3Qoc3RyaW5nID0gWDQsIHBhdHRlcm4gPSAiXjB7MX1cXGR7NX0iKSwKICAgICAgICAgRDUgPSBzdHJfZXh0cmFjdChzdHJpbmcgPSBYNSwgcGF0dGVybiA9ICJeMHsxfVxcZHs1fSIpLAogICAgICAgICBENiA9IHN0cl9leHRyYWN0KHN0cmluZyA9IFg2LCBwYXR0ZXJuID0gIl4wezF9XFxkezV9IiksCiAgICAgICAgIEQ3ID0gc3RyX2V4dHJhY3Qoc3RyaW5nID0gWDcsIHBhdHRlcm4gPSAiXjB7MX1cXGR7NX0iKSwKICAgICAgICAgZGlzdHJpY3RfaWQgPSBjb2FsZXNjZShENCwgRDUsIEQ2LCBENykpICU+JQogIHNlbGVjdCghYyhENCxENSxENixENykpCgojIENyZWF0ZSBhIHNpbmdsZSB2YXJpYWJsZSBmb3IgY2l0eQpEaXN0cmljdCA8LQogIERpc3RyaWN0ICU+JQogIHVuaXRlKGNpdHksIGMoWDIsIFgzKSwgc2VwID0gIiAiLCByZW1vdmUgPSBUUlVFKQoKCgpgYGAKCiMjIEFkZCBjaXR5IG5hbWUgdG8gb2hpb19taWxrIGRhdGEKYGBge3J9CiMgSXNvbGF0ZSBkaXN0cmljdCBJRCBpbiBNaWxrRGF0YQpNaWxrRGF0YSA8LSAKICBNaWxrRGF0YSAlPiUKICBzZXBhcmF0ZShjb250cmFjdF9pZCwgYygieWVhciIsICJkaXN0cmljdF9pZCIpLCByZW1vdmUgPSBGQUxTRSkgIyBrZWVwaW5nIG9yaWdpbmFsIHRvIGJpZCBJRCBwdXJwb3NlcwoKIyBKb2luIERpc3RyaWN0IGFuZCBNaWxrRGF0YSBzbyB0aGF0IGNpdHkgbmFtZXMgYXJlIGFzc29jaWF0ZWQgd2l0aCBkaXN0cmljdCBJRHMKTWlsa0RhdGEgPC0gCiAgTWlsa0RhdGEgJT4lCiAgbGVmdF9qb2luKERpc3RyaWN0ICU+JSBzZWxlY3QoZGlzdHJpY3RfaWQsIGNpdHkpLCBieSA9ICJkaXN0cmljdF9pZCIpCgojIENsZWFuIHVwIE1pbGtEYXRhCk1pbGtEYXRhIDwtIAogIE1pbGtEYXRhICU+JQogIHNlbGVjdCghYyguLi4xLCBpbmZsYXRpb25fYWRqdXN0ZWRfYmlkLCBpbmZsYXRpb25fcmF3X21pbGtfcHJpY2VfYWRqdXN0ZWRfYmlkKSkgJT4lCiAgc2VsZWN0KGNvbnRyYWN0X2lkLCB5ZWFyLCBjaXR5LCBkaXN0cmljdF9pZCwgYmlkLCBmaXJtLCB3aW5uaW5nX2JpZCwgaXNfY2FydGVsX2Zpcm0sIG9ubHlfY2FydGVsc19iaWRkaW5nX29uX2NvbnRyYWN0LCBudW1iZXJfb2ZfYmlkZGVyc19vbl9jb250cmFjdCkgJT4lCiAgbXV0YXRlKGRpc3RyaWN0X2lkID0gYXMubnVtZXJpYyhkaXN0cmljdF9pZCkpCmBgYAoKIyMgU3VtbWFyeSBTdGF0aXN0aWNzCmBgYHtyfQpzdW1tYXJ5KE1pbGtEYXRhKQpgYGAKCmBgYHtyfQojIyBOdW1iZXIgb2YgZGlzdHJpY3RzCk1pbGtEYXRhICU+JQogIGNvdW50KGRpc3RyaWN0X2lkKQoKIyMgTnVtYmVyIG9mIHRpbWVzIGJpZHMgZm9yIGEgZ2l2ZW4geWVhciB3ZXJlIGF0IGxlYXN0IDUgNQpNaWxrRGF0YSAlPiUKICBncm91cF9ieSh5ZWFyLCBkaXN0cmljdF9pZCkgJT4lCiAgc3VtbWFyaXplKHRvdGFsX2JpZHMgPSBuKCkpICU+JQogIGFycmFuZ2UoZGVzYyh0b3RhbF9iaWRzKSkgJT4lCiAgZmlsdGVyKHRvdGFsX2JpZHMgPj0gNSkKCgpgYGAKLSBUaGVyZSBhcmUgb25seSAyNSBvY2Nhc2lvbnMgd2hlcmUgdGhlcmUgd2VyZSBhdCBsZWFzdCAyNSBiaWRzIG9uIGEgc2luZ2xlIGNvbnRyYWN0IGZvciBhIGdpdmVuIHllYXIuCgoKCgoKCgoK</div>
 
 
 

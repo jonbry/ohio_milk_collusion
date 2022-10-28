@@ -20,15 +20,72 @@ District <- readr::read_table("DISTRICT.PRN", col_names = FALSE, na = "NA") # fi
 MilkData <- read_csv("ohio_milk_data.csv")
 ```
 
-# Add district information to MilkData
+## Clean data from District.PRN
 ```{r}
-# Find individual district IDs in rows X4-X7
+# Find individual district IDs in rows X4-X7 and combine them into a single district id
 District <-
   District %>%
-  mutate(D4 = str_extract(string = X4, pattern = "^0{1}\\d{5}")) %>%
-  mutate(D5 = str_extract(string = X5, pattern = "^0{1}\\d{5}")) %>%
-  mutate(D6 = str_extract(string = X6, pattern = "^0{1}\\d{5}")) %>%
-  mutate(D7 = str_extract(string = X7, pattern = "^0{1}\\d{5}"))
+  mutate(D4 = str_extract(string = X4, pattern = "^0{1}\\d{5}"),
+         D5 = str_extract(string = X5, pattern = "^0{1}\\d{5}"),
+         D6 = str_extract(string = X6, pattern = "^0{1}\\d{5}"),
+         D7 = str_extract(string = X7, pattern = "^0{1}\\d{5}"),
+         district_id = coalesce(D4, D5, D6, D7)) %>%
+  select(!c(D4,D5,D6,D7))
+
+# Create a single variable for city
+District <-
+  District %>%
+  unite(city, c(X2, X3), sep = " ", remove = TRUE)
+
 
 
 ```
+
+## Add city name to ohio_milk data
+```{r}
+# Isolate district ID in MilkData
+MilkData <- 
+  MilkData %>%
+  separate(contract_id, c("year", "district_id"), remove = FALSE) # keeping original to bid ID purposes
+
+# Join District and MilkData so that city names are associated with district IDs
+MilkData <- 
+  MilkData %>%
+  left_join(District %>% select(district_id, city), by = "district_id")
+
+# Clean up MilkData
+MilkData <- 
+  MilkData %>%
+  select(!c(...1, inflation_adjusted_bid, inflation_raw_milk_price_adjusted_bid)) %>%
+  select(contract_id, year, city, district_id, bid, firm, winning_bid, is_cartel_firm, only_cartels_bidding_on_contract, number_of_bidders_on_contract) %>%
+  mutate(district_id = as.numeric(district_id))
+```
+
+## Summary Statistics
+```{r}
+summary(MilkData)
+```
+
+```{r}
+## Number of districts
+MilkData %>%
+  count(district_id)
+
+## Number of times bids for a given year were at least 5 5
+MilkData %>%
+  group_by(year, district_id) %>%
+  summarize(total_bids = n()) %>%
+  arrange(desc(total_bids)) %>%
+  filter(total_bids >= 5)
+
+
+```
+- There are only 25 occasions where there were at least 25 bids on a single contract for a given year.
+
+
+
+
+
+
+
+
