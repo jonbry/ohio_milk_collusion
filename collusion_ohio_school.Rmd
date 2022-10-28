@@ -1,0 +1,34 @@
+---
+title: "Collusion Project"
+output: html_notebook
+---
+
+---
+title: "Ohio School Milk Collusion"
+output: html_notebook
+---
+
+```{r}
+rm(list = ls())
+library(tidyverse)
+library(lubridate)
+library(party)
+```
+
+```{r}
+District <- readr::read_table("DISTRICT.PRN", col_names = FALSE, na = "NA") # file does not have headers
+MilkData <- read_csv("ohio_milk_data.csv")
+```
+
+# Add district information to MilkData
+```{r}
+# Find individual district IDs in rows X4-X7
+District <-
+  District %>%
+  mutate(D4 = str_extract(string = X4, pattern = "^0{1}\\d{5}")) %>%
+  mutate(D5 = str_extract(string = X5, pattern = "^0{1}\\d{5}")) %>%
+  mutate(D6 = str_extract(string = X6, pattern = "^0{1}\\d{5}")) %>%
+  mutate(D7 = str_extract(string = X7, pattern = "^0{1}\\d{5}"))
+
+
+```
