@@ -58,7 +58,8 @@ MilkData <-
   MilkData %>%
   select(!c(...1, inflation_adjusted_bid, inflation_raw_milk_price_adjusted_bid)) %>%
   select(contract_id, year, city, district_id, bid, firm, winning_bid, is_cartel_firm, only_cartels_bidding_on_contract, number_of_bidders_on_contract) %>%
-  mutate(district_id = as.numeric(district_id))
+  mutate(district_id = as.numeric(district_id),
+         year = as.numeric(year))
 ```
 
 ## Summary Statistics
@@ -71,20 +72,77 @@ summary(MilkData)
 MilkData %>%
   count(district_id)
 
-## Number of times bids for a given year were at least 5 5
-MilkData %>%
-  group_by(year, district_id) %>%
+# Number of contracts where there were at least 5 bidders.
+many_bidders <-
+  MilkData %>%
+  group_by(contract_id) %>%
   summarize(total_bids = n()) %>%
   arrange(desc(total_bids)) %>%
   filter(total_bids >= 5)
 
+#Find number of cartel members per contract
+cartel_members_per_contract <-
+  MilkData %>%
+  filter(is_cartel_firm == 1) %>%
+  group_by(contract_id) %>%
+  summarize(cartel_per_contract = n())
+
+## Add number of cartel members bidding on a contract to MilkData
+MilkData <-
+  MilkData %>%
+  left_join(cartel_members_per_contract, by = c("contract_id" = "contract_id"))
+
+# Add cartel_members_per_contract information to many_bidders
+many_bidders <-
+  many_bidders %>%
+  left_join(MilkData, by = c("contract_id" = "contract_id")) %>%
+  mutate(year = as.numeric(year)) %>%
+  coalesce()
 
 ```
-- There are only 25 occasions where there were at least 25 bids on a single contract for a given year.
+* There are only 25 occasions where there were at least 25 bids on a single contract for a given year.
 
+## Summary statistics for contracts with >5 bidders
+```{r}
+summary(many_bidders)
 
+# Collusive vs non-collusive bidders
+many_bidders %>%
+  group_by(is_cartel_firm) %>%
+  summarize(total_bids = n())
 
+# Contracts with collusive bidder vs non-collusive contracts
+many_bidders %>%
+  group_by(contract_id) %>%
+  summarize(cartel_percent = cartel_per_contract/number_of_bidders_on_contract) %>%
+  distinct(contract_id, .keep_all = TRUE) %>%
+  ungroup() %>%
+  mutate(cartel_percent = ifelse(is.na(cartel_percent), 0, cartel_percent)) %>%
+  arrange(desc(cartel_percent))
+```
 
+## Coefficent of Variation 
+The coefficient of variation, $\large CV_j$ is the ratio of the standard deviation of the bid to the mean for each contract $\large j$. The lower the value of $\large CV_j$, the more suspicious the behavior.
+
+```{r}
+CV_j <- 
+  many_bidders %>%
+  select(contract_id, bid) %>%
+  group_by(contract_id) %>%
+  mutate(bid_name = "bid",
+         brank = rank(bid, ties.method = "random")) %>%
+  unite(bid_rank, c(bid_name, brank), sep = "_", remove = TRUE ) %>%
+  pivot_wider(names_from = bid_rank, values_from = bid) %>%
+  ungroup() %>%
+  rowwise() %>%
+  mutate(sd = sd(c(bid_1,bid_2,bid_3, bid_4, bid_5, bid_6), na.rm = TRUE),
+         mu = mean(c(bid_1,bid_2,bid_3, bid_4, bid_5, bid_6), na.rm = TRUE),
+         CV = sd/mu) %>%
+  left_join(many_bidders %>% select(contract_id, cartel_per_contract), by = "contract_id")
+
+```
+
+## Relative Distance
 
 
 
