@@ -125,7 +125,7 @@ many_bidders %>%
 The coefficient of variation, $\large CV_j$ is the ratio of the standard deviation of the bid to the mean for each contract $\large j$. The lower the value of $\large CV_j$, the more suspicious the behavior.
 
 ```{r}
-CV_j <- 
+screens <- 
   many_bidders %>%
   select(contract_id, bid) %>%
   group_by(contract_id) %>%
@@ -138,12 +138,31 @@ CV_j <-
   mutate(sd = sd(c(bid_1,bid_2,bid_3, bid_4, bid_5, bid_6), na.rm = TRUE),
          mu = mean(c(bid_1,bid_2,bid_3, bid_4, bid_5, bid_6), na.rm = TRUE),
          CV = sd/mu) %>%
-  left_join(many_bidders %>% select(contract_id, cartel_per_contract), by = "contract_id")
+  left_join(many_bidders %>% select(contract_id, cartel_per_contract), by = "contract_id") %>%
+  distinct(contract_id, .keep_all = TRUE)
 
 ```
 
 ## Relative Distance
+```{r}
+compare_2nd_highest <- function(x) {
+  #Sort the bid in descending order
+  x1 <- sort(x, decreasing = TRUE)
+  #Is the highest value more than double of second highest value
+  x1[1] > (x1[2])
+  return(x1[2])
+}
+screens <- 
+  screens %>%
+  rowwise() %>%
+  mutate(highest_bid = max(c(bid_1,bid_2,bid_3, bid_4, bid_5, bid_6), na.rm = TRUE),
+         second_highest_bid = compare_2nd_highest(c(bid_1,bid_2,bid_3, bid_4, bid_5, bid_6)),
+         lowest_bid = bid_1, 
+         second_lowest_bid = bid_2,
+         RD = (second_lowest_bid-lowest_bid)/sd(c(highest_bid,second_highest_bid)))
 
 
+
+```
 
 
